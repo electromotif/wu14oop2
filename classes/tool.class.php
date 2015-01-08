@@ -5,8 +5,8 @@ class Tool {
 	public $abilities = array ();
 
 
-public function __construct ($name, $abilities) {
-	$this->name = $name;
+public function __construct ($abilities) {
+	// $this->name = $name;
 	$this->abilities = $abilities;
 }
 

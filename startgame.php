@@ -20,26 +20,27 @@ unset($ds->challenges);
 unset($ds->tools);
 
 	// Check if Name and Class of player is sent
-	// If so, set Name and Class
+	// If so, set Name and Class of player
 
 if (isset($_REQUEST["playerName"]) && isset($_REQUEST["playerClass"])) {
 	$playerName = $_REQUEST["playerName"];
 	$playerClass = $_REQUEST["playerClass"];
 } else {
 
-	// Provides bounce for ajax call if the above is not met
+	// Provides (debugging) bounce for ajax call and graceful exit if the above is not met
 	
 	echo(json_encode(false));
 	exit();
 }
-
 	// Create new player and tie it to DBOS
 
 $ds->player[] = New $playerClass($playerName);
 
-	// Tie player in DBOS to a neat variable
+	// Assign player in DBOS to a neat variable
 
 $player = &$ds->player[0];
+
+	// return player name and class to ajax
 
 echo(json_encode(array("name" => $player->name, "class" => get_class($player))));
 

@@ -21,3 +21,10 @@ section {
 	text-align: center;
 }
 
+.top {
+	min-height: 300px;
+	background: url(../img/husabergtop.jpg);
+    background-size: cover;
+    
+
+}
