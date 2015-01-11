@@ -229,16 +229,16 @@ $challenge_names = array(
 	"Ughdibembo.", "Sweden.", "Tierra del Fuego.");
 	
 $challenge_descriptions = array (
-	"Section 1 is along the river Hakatzoe. An easy straight ride, but requires some endurance",
-	"Section 2 is the classic Jumpalooza route circling the Mochia plateau. It's the altitude that kills you",
-	"Section 3 runs between three villages in Ochiticzla. Relatively mellow but not without suprises",
-	"Section 4 is the favourite of technical riders. Lots of difficult passages in the Uhikanka mountains.",
-	"Section 5 will require everything you got. 800 kilometers of unrelenting Molotovina wilderness.",
-	"Section 6 around Kristi lekamen is not a problem. Unless it's raining dinosaurs and icebergs. Otherwise enjoy the ride!",
-	"Section 7 at the foot of Ksinromba is a beatiful route with a few challenging river crossings.",
-	"Section 8 along the rocky coast of Ughdibembo usually involves a stop for whale-spotting.",
-	"Section 9 through the dense forests of northern Sweden will have you camping with wolves and boars. Lucky you",
-	"Section 10 makes most riders homesick. Our route in Tierra del Fuego is a savage beauty. Plan ahead.");
+	"This route follows the river Hakatzoe. An easy straight ride, but requires some endurance.",
+	"You're gonna ride the classic Jumpalooza route circling the Mochia plateau. It's the altitude that kills you.",
+	"Monkeys high on leftover energydrinks dominate the jungle between three villages in Ochiticzla. A relatively mellow stretch but not without suprises.",
+	"THE favourite of technical riders. Lots of difficult passages in the Uhikanka mountains.",
+	"This will require everything you got. 800 kilometers of unrelenting Molotovina wilderness.",
+	"666 turns around Kristi lekamen is not a problem. Say hi to those horsemen, peculiar chaps, listening to vinyl backwards.",
+	"A beatiful route at the foot of Ksinromba, with a few challenging river crossings.",
+	"The route along the rocky coast of Ughdibembo usually involves a stop for whale-spotting.",
+	"This section of the dense forests of northern Sweden will have you camping with wolves and boars. Lucky you.",
+	"This one makes most riders homesick. Our route in Tierra del Fuego is a savage beauty. Plan ahead.");
 
 for ($i=0; $i < 10; $i++) { 
 	$ds->challenges[] = new Challenge($challenge_names[$i],$challenge_descriptions[$i],$challenge_options[$i]);

@@ -25,7 +25,8 @@ unset($ds->tools);
 if (isset($_REQUEST["playerName"]) && isset($_REQUEST["playerClass"])) {
 	$playerName = $_REQUEST["playerName"];
 	$playerClass = $_REQUEST["playerClass"];
-} else {
+	} 
+	else {
 
 	// Provides (debugging) bounce for ajax call and graceful exit if the above is not met
 	
