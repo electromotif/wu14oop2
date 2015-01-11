@@ -25,6 +25,9 @@ section {
 	min-height: 300px;
 	background: url(../img/husabergtop.jpg);
     background-size: cover;
-    
-
 }
+
+section p {
+	font-size: 130%;
+
+} 

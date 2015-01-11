@@ -169,13 +169,13 @@ function count_occurences($value, $array) {
 // here we go - create an array of all (possible) tools 
 
 $tool_options = array($rdgear_map, $stab_susp, $nbike, $shkdwnride, $supernav, $dlxfood, $suptruck, $supbike);
-$tool_names = array("Ridegear & map", "Stabilizier & electronic suspension", "New bike", "Shakedownride",
+$tool_names = array("Ridegear & map", "Stabilizer & electronic suspension", "New bike", "Shakedownride",
 	"Supernav", "Deluxe food", "Supportruck", "Supportbike");
-$tool_descriptions = array ("This includes the best clothing, boots and helmet money can buy, 
+$tool_descriptions = array ("This includes the best (heated) clothing, boots and helmet money can buy, 
 	and a map with every critical detail.", "Steering stabilizer and electronically adjustable suspension.",
 	"This is a new bike; broken-in, tweaked and ready to ride.", "You are given fuel and permission for a shakedown-ride.",
 	"The super-nav kit contains gps and electronic roadbook, all on head-up display. ",
-	"Roadworthy treats - to eat, use in bargaining or to distract animals",
+	"Adventureworthy treats - to eat, use in bargaining or to distract animals",
 	"Bingo, adventurer. You got a supporttruck!",
 	"Good news! A supportbike will follow your tracks.");
 
@@ -242,71 +242,8 @@ $challenge_descriptions = array (
 
 for ($i=0; $i < 10; $i++) { 
 	$ds->challenges[] = new Challenge($challenge_names[$i],$challenge_descriptions[$i],$challenge_options[$i]);
-	echo $i." ";
 };
 
-echo "<br>player:<br>";
-var_dump ($ds->player[0]);
-echo "<br><br>bot1_class:<br>";
-var_dump ($ds->bots[0]);
-echo "<br><br>";
-echo "<br>bot2_class:<br>";
-var_dump ($ds->bots[1]);
-echo "<br><br>tools:<br>";
-var_dump ($ds->tools);
-echo "<br><br>challenges:<br>";
-var_dump ($ds->challenges);
-
-
-	// Dumps and stuff for dev
-
-//$ds->challenges[] = new ...
-/* 
-$ch_one = new Challenge ($ch_one, $ch1);
-$ch_two = new Challenge ($ch_two, $ch2);
-$ch_three = new Challenge ($ch_three, $ch3);
-$ch_four = new Challenge ($ch_four, $ch4);
-*/
-
-
-/*
-echo "<br><br>";
-var_dump ($ch_one);
-echo "<br><br>";
-var_dump ($ch_two);
-echo "<br><br>";
-var_dump ($ch_three);
-echo "<br><br>";
-var_dump ($ch_four);
-echo "<br><br>";
-var_dump ($rg_mp);
-echo "<br><br>";
-var_dump ($st_su);
-echo "<br><br>";
-var_dump ($ne_bi);
-echo "<br><br>";
-var_dump ($sh_ri);
-echo "<br><br>";
-var_dump ($su_na);
-echo "<br><br>";
-var_dump ($dl_fo);
-echo "<br><br>";
-var_dump ($su_tr);
-echo "<br><br>";
-var_dump ($su_bi);
-echo "<br><br>";
-*/
-
-/* 
-$rg_mp = new Tool ($rdgear_map, $rdgear_map);
-$st_su = new Tool ($stab_susp, $stab_susp);
-$ne_bi = new Tool ($nbike, $nbike);
-$sh_ri = new Tool ($shkdwnride, $shkdwnride);
-$su_na = new Tool ($supernav, $supernav);
-$dl_fo = new Tool ($dlxfood, $dlxfood);
-$su_tr = new Tool ($suptruck, $suptruck);
-$su_bi = new Tool ($supbike, $supbike);
-*/
+echo(json_encode(array("bot1_name" => $bot1_name, "bot1_class" => $bot1_class, "bot2_name" => $bot2_name, "bot2_class" => $bot2_class)));
 
 ?>
-

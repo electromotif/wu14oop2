@@ -5,11 +5,11 @@ $("document").ready(function(){
 $('.btm').hide();
 
 // Click handler - grabs chosen type of player from buttons.
-// Hands it over to namePlayer via thisBtnValue
+// Hands it over to namePlayer via playerClass
 
 	$('button.btn.plrClass').click(function(){
-	    var thisBtnValue = $(this).val();
-	    namePlayer (thisBtnValue);
+	    playerClass = $(this).val();
+	    namePlayer (playerClass);
 	});
 
 // namePlayer displays the chosen type(class) of player and asks for a name.
@@ -17,14 +17,12 @@ $('.btm').hide();
 // playerClass to startgame.php which creates a php object with the chosen
 // class and name. 
 //
-// Upon success of the ajax call, createBots is run with  the player 
-// class and name as arguments. (bot types will be different from
-// the player's type)
+// Upon success of the ajax call, createBots is run 
 
-function namePlayer(thisBtnValue) {
+function namePlayer(playerClass) {
 	
 	$('.mid').hide();
-	$('.btm').prepend(thisBtnValue + ", what is your name?<br><br>");
+	$('.btm').prepend(playerClass + ", what is your name?<br><br>");
 	$('.btm').fadeTo('medium', 1);
 	
 	// #plrNmFrm is the id of the html form, #plrNm is id of field
@@ -38,9 +36,9 @@ function namePlayer(thisBtnValue) {
 			$.ajax({
 			dataType: "json",
 			url: "startgame.php", 
-			data: {playerName: playerName, playerClass: thisBtnValue},
+			data: {playerName: playerName, playerClass: playerClass},
 			success: function(data) {
-				createBots(thisBtnValue);
+				createBots();
 			}
 		});
 		
@@ -48,12 +46,29 @@ function namePlayer(thisBtnValue) {
 		return false;
 	});		
 };
+	// Simply triggers bots_tools_challenges.php
+	function createBots () {
 
-function createBots (humanPlr) {
-	$('.btm').hide();
-	$('.mid').html(humanPlr);
-	$('.mid').fadeTo('medium', 1)
-};
+		$('.btm').hide();
+	
+		$.ajax({
+				dataType: "json",
+				url: "bots_tools_challenges.php", 
+				data: {},
+				success: function(data) {
+					contenders (data);
+				}
+			});
+		};
+
+	function contenders (data) {
+
+		$('.mid').html("<p>We have a rally!<br><br>- " + playerName + " -</p>" + playerClass + "<br><br>");
+		$('.mid').append("<p>- " + data.bot1_name + " -</p>" + data.bot1_class, 
+			"<br><br><p>- " + data.bot2_name + " -</p>" + data.bot2_class + "<br><br>");
+		$('.mid').append 
+		$('.mid').fadeTo('slow', 1);
+		};
 
 
 	
